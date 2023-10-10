@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>Stupid.RS3.API</Title>
+    <Authors>Topias Mariapori</Authors>
+    <Description>Client for querying data from RuneScape API</Description>
+    <Copyright>Topias Mariapori</Copyright>
+  </PropertyGroup>
+
+</Project>

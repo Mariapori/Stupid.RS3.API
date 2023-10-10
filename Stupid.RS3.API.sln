@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stupid.RS3.API", "Stupid.RS3.API\Stupid.RS3.API.csproj", "{4FD22016-B2E2-4A92-9DB5-E40DC5CCAFD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stupid.RS3.API.Tests", "Stupid.RS3.API.Tests\Stupid.RS3.API.Tests.csproj", "{5692B5AB-3F3E-4047-B234-91954C83F168}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4FD22016-B2E2-4A92-9DB5-E40DC5CCAFD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FD22016-B2E2-4A92-9DB5-E40DC5CCAFD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FD22016-B2E2-4A92-9DB5-E40DC5CCAFD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FD22016-B2E2-4A92-9DB5-E40DC5CCAFD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5692B5AB-3F3E-4047-B234-91954C83F168}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5692B5AB-3F3E-4047-B234-91954C83F168}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5692B5AB-3F3E-4047-B234-91954C83F168}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5692B5AB-3F3E-4047-B234-91954C83F168}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4FABB22E-1306-48A3-918A-1AAD3767E822}
+	EndGlobalSection
+EndGlobal
