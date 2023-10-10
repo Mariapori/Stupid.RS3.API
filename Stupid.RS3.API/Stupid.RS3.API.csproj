@@ -7,6 +7,7 @@
     <Authors>Topias Mariapori</Authors>
     <Description>Client for querying data from RuneScape API</Description>
     <Copyright>Topias Mariapori</Copyright>
+    <RepositoryUrl>https://github.com/Mariapori/Stupid.RS3.API</RepositoryUrl>
   </PropertyGroup>
 
 </Project>
