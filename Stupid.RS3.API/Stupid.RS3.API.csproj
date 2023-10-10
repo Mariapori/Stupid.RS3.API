@@ -8,6 +8,15 @@
     <Description>Client for querying data from RuneScape API</Description>
     <Copyright>Topias Mariapori</Copyright>
     <RepositoryUrl>https://github.com/Mariapori/Stupid.RS3.API</RepositoryUrl>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\..\Downloads\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
