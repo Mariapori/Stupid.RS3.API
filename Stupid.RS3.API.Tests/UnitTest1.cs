@@ -14,9 +14,9 @@ namespace Stupid.RS3.API.Tests
         {
             var result = await _client.GetPlayerStatsByName("Mariapori");
             // Check are first stats object overall
-            Assert.That(Skills.Overall, Is.EqualTo(result[0].Skill));
+            Assert.That(result[0].Skill, Is.EqualTo(Skills.Overall));
             // Check are last stats object necromancy
-            Assert.That(Skills.Necromancy,Is.EqualTo(result.Last().Skill));
+            Assert.That(result.Last().Skill,Is.EqualTo(Skills.Necromancy));
         }
     }
 }
