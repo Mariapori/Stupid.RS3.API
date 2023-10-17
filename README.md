@@ -1,56 +1,40 @@
-# Stupid.RS3.API C# Package
+# Stupid.RS3.API Usage Guide
 
-The **Stupid.RS3.API** C# package is a simple and lightweight API wrapper for interacting with the RuneScape 3 (RS3) API. This package is designed to make it easier to query various endpoints of the RuneScape API and retrieve game-related data.
+## Introduction
 
-## Installation
+The **Stupid.RS3.API** C# package provides a simple and lightweight API wrapper for interacting with the RuneScape 3 (RS3) API. This guide will walk you through the usage of the package, including how to retrieve player quest information and filter quests based on difficulty and status.
 
-You can install the package via NuGet Package Manager. Open your project in Visual Studio or any other C# development environment and execute the following command in the NuGet Package Manager Console:
+### Installation
+
+To install the **Stupid.RS3.API** package, you can use the NuGet Package Manager in your C# project. Execute the following command in the NuGet Package Manager Console:
 
 ```powershell
 Install-Package Stupid.RS3.API
 ```
 
-## Quick Start
+## Usage
 
-To use the **Stupid.RS3.API** package in your C# project, follow these steps:
+### Retrieving Player Quests
 
-1. Import the `Stupid.RS3.API` namespace in your C# file where you want to use the package:
+The `GetPlayerQuests` method allows you to retrieve a player's quest information. You can optionally filter the quests based on their difficulty and status.
 
-   ```csharp
-   using Stupid.RS3.API;
-   ```
+#### Method Signature
 
-2. Create an instance of the `Client` class:
+```csharp
+public async Task<List<Quest>> GetPlayerQuests(string name, Difficulty? filterDifficulty = null, QuestStatus? filterStatus = null)
+```
 
-   ```csharp
-   var rs3Client = new Client();
-   ```
+- `name` (string): The RuneScape 3 username for which you want to retrieve quest information.
+- `filterDifficulty` (optional): Filter quests by their difficulty (optional).
+- `filterStatus` (optional): Filter quests by their status (optional).
 
-3. Use the `GetPlayerStatsByName` method to retrieve a player's statistics by their RuneScape 3 username:
-
-   ```csharp
-   string playerName = "YourPlayerName";
-   var playerStats = await rs3Client.GetPlayerStatsByName(playerName);
-
-   foreach (var stat in playerStats)
-   {
-       Console.WriteLine($"Skill: {stat.Skill}, Rank: {stat.Rank}, Level: {stat.Level}, Experience: {stat.Experience}");
-   }
-   ```
-
-Replace `"YourPlayerName"` with the actual RuneScape 3 username you want to retrieve statistics for.
-
-This code snippet demonstrates how to fetch player statistics using the **Stupid.RS3.API** package in a C# application.
-
-### Example Usage
-
-Here's an example of how to use the package to retrieve a player's RuneScape 3 statistics:
+#### Example Usage
 
 ```csharp
 using System;
 using Stupid.RS3.API;
 
-namespace RS3StatRetrieval
+namespace RS3QuestRetrieval
 {
     class Program
     {
@@ -62,17 +46,42 @@ namespace RS3StatRetrieval
             // Define the player's RuneScape 3 username
             string playerName = "YourPlayerName";
 
-            // Retrieve the player's statistics
-            var playerStats = await rs3Client.GetPlayerStatsByName(playerName);
+            // Retrieve the player's quests (no filters applied)
+            var playerQuests = await rs3Client.GetPlayerQuests(playerName);
 
-            // Display the player's statistics
-            foreach (var stat in playerStats)
+            // Display the player's quests
+            foreach (var quest in playerQuests)
             {
-                Console.WriteLine($"Skill: {stat.Skill}, Rank: {stat.Rank}, Level: {stat.Level}, Experience: {stat.Experience}");
+                Console.WriteLine($"Title: {quest.Title}, Status: {quest.Status}, Difficulty: {quest.Difficulty}");
             }
         }
     }
 }
 ```
 
-Remember to replace `"YourPlayerName"` with the actual username you want to retrieve statistics for.
+### Filter by Difficulty and Status
+
+You can filter quests by difficulty and status by providing the optional parameters:
+
+```csharp
+var filteredQuests = await rs3Client.GetPlayerQuests(playerName, Difficulty.Experienced, QuestStatus.COMPLETED);
+```
+
+This example retrieves quests that are of "Experienced" difficulty and have a "COMPLETED" status.
+
+## Release Notes
+
+### Version 1.0.1
+
+- Added the `GetPlayerQuests` method to retrieve a player's quest information.
+- Introduced optional filtering based on quest difficulty and status.
+- Updated underlying dependencies for improved performance and compatibility.
+
+### Version 1.0.0
+
+- Initial release with basic functionality for retrieving player statistics.
+- Sets the foundation for future expansion and improvements.
+
+Please note that the above release notes are for version 1.0.1, which is an upcoming release. You can refer to the package's documentation for release notes and updates on the current version.
+
+This guide and the release notes should help you get started with the **Stupid.RS3.API** package and understand the new features introduced in version 1.0.1.
