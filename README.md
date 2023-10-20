@@ -1,5 +1,5 @@
 # Stupid.RS3.API Usage Guide
-
+[![Build and Unit tests](https://github.com/Mariapori/Stupid.RS3.API/actions/workflows/dotnet.yml/badge.svg)](https://github.com/Mariapori/Stupid.RS3.API/actions/workflows/dotnet.yml)
 ## Introduction
 
 The **Stupid.RS3.API** C# package provides a simple and lightweight API wrapper for interacting with the RuneScape 3 (RS3) API. This guide will walk you through the usage of the package, including how to retrieve player quest information and filter quests based on difficulty and status.
