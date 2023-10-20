@@ -1,8 +1,10 @@
 ﻿
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Stupid.RS3.API
@@ -41,7 +43,13 @@ namespace Stupid.RS3.API
             }
             return stats;
         }
-
+        /// <summary>
+        /// Get player quests
+        /// </summary>
+        /// <param name="name">Player's name</param>
+        /// <param name="filterDifficulty">Get only filtered difficulty</param>
+        /// <param name="filterStatus">Get only filtered status</param>
+        /// <returns>Player quests</returns>
         public async Task<List<Quest>> GetPlayerQuests(string name, Difficulty? filterDifficulty = null, QuestStatus? filterStatus = null)
         {
             var response = await _httpClient.GetStringAsync($"https://apps.runescape.com/runemetrics/quests?user={name}");
@@ -55,6 +63,26 @@ namespace Stupid.RS3.API
                 objects = objects.Where(o => o.Status.ToLower().Contains(filterStatus.ToString().ToLower())).ToList();
             }
             return objects;
+        }
+        /// <summary>
+        /// Get online player count (OSRS/RS3)
+        /// </summary>
+        /// <returns>Get online player count, if fails returns 0</returns>
+        public async Task<int> GetOnlinePlayerCount()
+        {
+            try
+            {
+                var response = await _httpClient.GetStringAsync("http://www.runescape.com/player_count.js?varname=iPlayerCount&callback=jQuery000000000000000_0000000000&_=0");
+                response = response.Remove(0, 33);
+                var split = response.Split(')');
+                int.TryParse(split[0], out int result);
+                return result;
+            }
+            catch
+            {
+                return 0;
+            }
+
         }
     }
 }

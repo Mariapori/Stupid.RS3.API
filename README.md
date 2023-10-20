@@ -71,6 +71,10 @@ This example retrieves quests that are of "Experienced" difficulty and have a "C
 
 ## Release Notes
 
+### Version 1.0.2
+
+- Added `GetOnlinePlayerCount` method to retrieve online player count (OSRS/RS3)
+
 ### Version 1.0.1
 
 - Added the `GetPlayerQuests` method to retrieve a player's quest information.
@@ -82,6 +86,6 @@ This example retrieves quests that are of "Experienced" difficulty and have a "C
 - Initial release with basic functionality for retrieving player statistics.
 - Sets the foundation for future expansion and improvements.
 
-Please note that the above release notes are for version 1.0.1, which is an upcoming release. You can refer to the package's documentation for release notes and updates on the current version.
+Please note that the above release notes are for version 1.0.2, which is an upcoming release. You can refer to the package's documentation for release notes and updates on the current version.
 
-This guide and the release notes should help you get started with the **Stupid.RS3.API** package and understand the new features introduced in version 1.0.1.
+This guide and the release notes should help you get started with the **Stupid.RS3.API** package and understand the new features introduced in version 1.0.2.

@@ -59,5 +59,12 @@ namespace Stupid.RS3.API.Tests
             result = await _client.GetPlayerQuests("Mariapori", filterStatus: QuestStatus.COMPLETED);
             Assert.That(result.All(o => o.Status.ToLower().Contains(QuestStatus.COMPLETED.ToString().ToLower())), Is.True);
         }
+        [Test]
+        public async Task GetOnlinePlayerCount_Test()
+        {
+            // Checking only are result != 0
+            var result = await _client.GetOnlinePlayerCount();
+            Assert.That(result, Is.Not.EqualTo(0));
+        }
     }
 }
