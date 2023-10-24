@@ -66,5 +66,11 @@ namespace Stupid.RS3.API.Tests
             var result = await _client.GetOnlinePlayerCount();
             Assert.That(result, Is.Not.EqualTo(0));
         }
+        [Test]
+        public async Task GetMonthlyXp_Test()
+        {
+            var result = await _client.GetMonthlyXp("Mariapori");
+            Assert.That(result,Is.Not.Null);
+        }
     }
 }

@@ -1,10 +1,8 @@
 ﻿
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Stupid.RS3.API
@@ -84,5 +82,17 @@ namespace Stupid.RS3.API
             }
 
         }
+
+        public async Task<XpMonthly.Root> GetMonthlyXp(string name,Skills? skill = null)
+        {
+            var baseUrl = $"https://apps.runescape.com/runemetrics/xp-monthly?searchName={name.ToLower()}";
+            if(skill.HasValue)
+            {
+                baseUrl += $"&skillid={(int)skill}";
+            }
+            var response = await _httpClient.GetStringAsync(baseUrl);
+            var json = JsonConvert.DeserializeObject<XpMonthly.Root>(response);
+            return json;
+        } 
     }
 }
