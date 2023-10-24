@@ -86,7 +86,7 @@ namespace Stupid.RS3.API
         public async Task<XpMonthly.Root> GetMonthlyXp(string name,Skills? skill = null)
         {
             var baseUrl = $"https://apps.runescape.com/runemetrics/xp-monthly?searchName={name.ToLower()}";
-            if(skill.HasValue)
+            if(skill.HasValue && skill != Skills.Overall)
             {
                 baseUrl += $"&skillid={(int)skill}";
             }
