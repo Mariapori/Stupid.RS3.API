@@ -71,6 +71,10 @@ This example retrieves quests that are of "Experienced" difficulty and have a "C
 
 ## Release Notes
 
+### Version 1.0.3
+
+- Added method for querying monthly xp data
+
 ### Version 1.0.2
 
 - Added `GetOnlinePlayerCount` method to retrieve online player count (OSRS/RS3)
