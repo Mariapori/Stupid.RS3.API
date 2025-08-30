@@ -11,10 +11,10 @@
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageReleaseNotes>New method for querying online player count</PackageReleaseNotes>
-    <FileVersion>1.0.2</FileVersion>
-    <AssemblyVersion>1.0.2</AssemblyVersion>
-    <Version>1.0.2</Version>
+    <PackageReleaseNotes>Bugfixes</PackageReleaseNotes>
+    <FileVersion>1.0.3</FileVersion>
+    <AssemblyVersion>1.0.3</AssemblyVersion>
+    <Version>1.0.3</Version>
     <PackageTags>RuneScape;RS3;API;RuneMetrics</PackageTags>
   </PropertyGroup>
 

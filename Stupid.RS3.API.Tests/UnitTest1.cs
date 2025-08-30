@@ -22,7 +22,7 @@ namespace Stupid.RS3.API.Tests
         public async Task GetPlayerQuests_Test()
         {
             var result = await _client.GetPlayerQuests("Mariapori");
-            Assert.IsTrue(result.Any());
+            Assert.That(result.Any());
         }
         [Test]
         public async Task GetPlayerQuests_Test_2()
@@ -66,11 +66,11 @@ namespace Stupid.RS3.API.Tests
             var result = await _client.GetOnlinePlayerCount();
             Assert.That(result, Is.Not.EqualTo(0));
         }
-/*         [Test]
+        [Test]
         public async Task GetMonthlyXp_Test()
         {
             var result = await _client.GetMonthlyXp("Mariapori");
-            Assert.That(result,Is.Not.Null);
-        } */
+            Assert.That(result, Is.Not.Null);
+        }
     }
 }
